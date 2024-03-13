@@ -1,17 +1,15 @@
 import React from 'react';
 
-const HeaderBar = ({ title }) => {
+export default function Headerbar() {
     return (
-        <div style={{
-            backgroundColor: '#333',
-            color: 'white',
-            padding: '30px 20px',
-            textAlign: 'center',
-            fontSize: '24px'
-        }}>
-            {title}
-        </div>
-    );
-};
+        <header>
+            <h3 className="header--text">
+                Game Data Analyst
+            </h3>
 
-export default HeaderBar;
+            <h4 className = "header--title">
+                Ian Kainan 
+            </h4>
+        </header>
+    )
+}

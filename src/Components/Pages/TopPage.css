@@ -1,0 +1,33 @@
+/* GamesPage.css */
+
+.games-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .flex-container {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+  }
+  
+  .right-section {
+    flex-grow: 1;
+    padding: 0 20px; /* Adjust as needed */
+  }
+  
+  .game-title, .search-title {
+    text-align: center;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px; /* Adds gap between buttons */
+  }
+  
+  /* Adjust the width of the
+  
