@@ -47,7 +47,8 @@ header {
 }
 
 .search-title {
-  margin-top: 20px; /* Add space above the search section */
+  margin-top: 20px; 
+  color: #fff;
 }
 
 .button-container {
@@ -94,13 +95,9 @@ header {
 
 
 main {
-  padding: 57px 27px;
-  color: white;
-  background-image: url(./src/assets/projectyi.png),
-                    url(./src/assets/gwen.png);
   background-position: top right 70px, top left -40px; 
   background-repeat: no-repeat;
-  background-size: contain; 
+  background-size: contain;
 }
 
 .main--title {
@@ -109,8 +106,9 @@ main {
   font-size: 50px;
   letter-spacing: -0.05em;
   text-align: center;
-  padding-bottom: 20px;
+  padding-bottom: 1px;
   font-family: 'Pacifico', cursive;
+  color: #fff;
 }
 
 .card {

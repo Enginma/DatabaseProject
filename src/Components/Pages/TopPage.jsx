@@ -1,35 +1,74 @@
-import Button from '../Button/button';
+import React, { useState } from 'react';
 import TextBox from '../InputBox/TextInput';
-import Sidebar from '../SideBar/sidebar';
 import './TopPage.css';
 import Card from '../Cards/card';
 
 const GamesPage = () => {
-  const handleButtonClick = (e) => {
-    console.log('Button clicked!', e.target.textContent);
+
+  const [backgroundImages, setBackgroundImages] = useState({
+    image1: './src/assets/projectyi.png',
+    image2: './src/assets/gwen.png',
+  });
+
+
+  const handleButtonClick = (category) => {
+    console.log('Button clicked!', category);
+
+    switch (category) {
+      case 'Fighting Games':
+        setBackgroundImages({
+          image1: './src/assets/terry.png', 
+          image2: './src/assets/king2.png', 
+        });
+
+        break;
+      case 'Shooter Games':
+        setBackgroundImages({
+          image1: './src/assets/t.png',
+          image2: './src/assets/sas.png',
+        });
+        break;
+      case 'RPG Games':
+        setBackgroundImages({
+          image1: './src/assets/shadowh.png',
+          image2: './src/assets/astarion.png',
+        });
+        break;
+
+      default:
+        setBackgroundImages({
+          image1: './src/assets/projectyi.png',
+          image2: './src/assets/gwen.png',
+        });
+    }
+    
   };
 
   return (
-    <main>
+    <main style={{
+      backgroundImage: `url(${backgroundImages.image1}), url(${backgroundImages.image2})`,
+      backgroundPosition: 'top right 130px, top left 80px', 
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'contain',
+    }}>       
       <div className="games-page">
         <div className="flex-container">
           <div className="right-section">
             <h1 className="main--title">Select a Category</h1>
             <div className="button-container">
-                <div className="game-button game-button-with-image" onClick={handleButtonClick}>
-                  <Card src="tekken8.png" alt="Fighting games"/>
-                  <span>Fighting Games</span> 
-                </div>
-                <div className="game-button game-button-with-image" onClick={handleButtonClick}>
-                  <Card src="cs2.png"  alt="Shooter games"/>
-                  <span>Shooter Games</span> 
-                </div>                
-                <div className="game-button game-button-with-image" onClick={handleButtonClick}>
-                  <Card src="bg3.png" alt="RPG games"/>
-                  <span>RPG Games</span> 
-                </div>                  
+              <div className="game-button game-button-with-image" onClick={() => handleButtonClick('Fighting Games')}>
+                <Card src="tekken8.png" alt="Fighting games"/>
+                <span>Fighting Games</span>
               </div>
-
+              <div className="game-button game-button-with-image" onClick={() => handleButtonClick('Shooter Games')}>
+                <Card src="cs2.png" alt="Shooter games"/>
+                <span>Shooter Games</span>
+              </div>
+              <div className="game-button game-button-with-image" onClick={() => handleButtonClick('RPG Games')}>
+                <Card src="bg3.png" alt="RPG games"/>
+                <span>RPG Games</span>
+              </div>
+            </div>
             <h2 className="search-title">Search for a specific game</h2>
             <TextBox />
           </div>
