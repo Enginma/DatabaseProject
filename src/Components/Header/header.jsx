@@ -3,12 +3,12 @@ import React from 'react';
 export default function Headerbar() {
     return (
         <header>
-            <h3 className="header--text">
+            <h2 className="header--text">
                 Game Data Analyst
-            </h3>
+            </h2>
 
             <h4 className = "header--title">
-                Ian Kainan 
+                Ian 
             </h4>
         </header>
     )
