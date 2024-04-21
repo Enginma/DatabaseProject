@@ -32,8 +32,9 @@ app.get("/data", async (req, res) => {
 app.get("/data/genre/:genre", async (req, res) => {
     const genre = req.params.genre;
 
-    if (genre !== 'Fighting' || genre !== 'RPG' || genre !== 'Shooter') {
+    if (genre !== 'Fighting' && genre !== 'RPG' && genre !== 'Shooter') {
       res.status(400).send("Invalid input");
+      return; 
     }
 
 
@@ -44,6 +45,27 @@ app.get("/data/genre/:genre", async (req, res) => {
       console.error(err);
       res.status(500).send("Server error");
     }
+});
+
+
+
+app.get("/data/search", async (req, res) => {
+  const searchQuery = req.query.q; 
+
+  if (!searchQuery) {
+    return res.status(400).send("Search query is required");
+  }
+
+  try {
+    const result = await pool.query(
+      "SELECT * FROM games WHERE title ILIKE $1 OR genre ILIKE $1",
+      [`%${searchQuery}%`] 
+    );
+    res.json(result.rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Server error");
+  }
 });
 
 
