@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useUser } from '../../UserContext';
-
+import './header.css';
 export default function Headerbar() {
     const { user, setUser } = useUser();
     console.log('User:', user);
@@ -33,7 +33,7 @@ export default function Headerbar() {
             <h2 className="header--text">
                 Game Data Analyst
             </h2>
-            <h4>{user ? user.username : 'Not signed in'}</h4>
+            <h4 className="username-display">{user ? user.username : 'Not signed in'}</h4>
             <div className="header--title">
                 <button className="logout-button" onClick={handleLogout}>
                     Logout
