@@ -3,15 +3,17 @@ import './login.css'; // Make sure the path to your CSS file is correct
 import backgroundImage from './bg.jpg';
 import HomePage from '../../HomePage';
 import { useUser } from  '../../UserContext';
+import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const { setUser } = useUser();
+  const navigate = useNavigate();
 
   const handleLogin = async (event) => {
     event.preventDefault();
-
+    
     
     try {
         const endpoint = 'http://localhost:3001/api/login';
@@ -28,7 +30,8 @@ const LoginPage = () => {
             setUser({ username });
             console.log(username);
             alert('Login successful')
-            window.location.href = 'http://localhost:5173/post_login'
+            //window.location.href = 'http://localhost:5173/post_login'
+            navigate('/post_login');
             ;
           } else {
             alert('Login failed: Invalid credentials');

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import TopPage from './Components/Pages/TopPage'; 
 import HeaderBar from './Components/Header/header';
 import BotPage from './Components/Pages/BotPage';
-import { UserProvider } from './UserContext';
+
 
  const GamesPage = () => {
 
@@ -12,13 +12,11 @@ import { UserProvider } from './UserContext';
 
 
    return (
-    <UserProvider>
      <>
        <HeaderBar/>
        <TopPage updateGames = {(games) => setLoadedGames(games)}/>
        <BotPage games = {loadGames}/>
      </>
-     </UserProvider>
    );
  };
 

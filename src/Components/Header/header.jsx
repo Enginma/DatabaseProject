@@ -3,7 +3,7 @@ import { useUser } from '../../UserContext';
 
 export default function Headerbar() {
     const { user, setUser } = useUser();
-
+    console.log('User:', user);
     const handleLogout = async () => {
         try {
             const endpoint = 'http://localhost:3001/api/logout';
@@ -16,8 +16,9 @@ export default function Headerbar() {
             console.log('Logout response:', response);
             if (response.ok) {
                 setUser(null); // Clear user context
-                alert('Logout successful')
+                alert('Returning to log in page now')
                 window.location.href = '/'; // Redirect to login page
+                
             } else {
                 throw new Error('Logout failed with status: ' + response.status);
             }
@@ -32,7 +33,7 @@ export default function Headerbar() {
             <h2 className="header--text">
                 Game Data Analyst
             </h2>
-            <h4>{user ? user.username : 'Loading...'}</h4>
+            <h4>{user ? user.username : 'Not signed in'}</h4>
             <div className="header--title">
                 <button className="logout-button" onClick={handleLogout}>
                     Logout
