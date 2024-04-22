@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useUser } from '../../UserContext';
 import './header.css';
+import { useNavigate } from 'react-router-dom';
+
+
 export default function Headerbar() {
     const { user, setUser } = useUser();
     console.log('User:', user);
+    const navigate = useNavigate();
+
     const handleLogout = async () => {
         try {
             const endpoint = 'http://localhost:3001/api/logout';
@@ -28,6 +33,10 @@ export default function Headerbar() {
         }
     };
 
+    const handleLogin = () => {
+        navigate('/');
+    };
+
     return (
         <header>
             <h2 className="header--text">
@@ -35,9 +44,9 @@ export default function Headerbar() {
             </h2>
             <h4 className="username-display">{user ? user.username : 'Not signed in'}</h4>
             <div className="header--title">
-                <button className="logout-button" onClick={handleLogout}>
-                    Logout
-                </button>
+            <button className="logout-button" onClick={user ? handleLogout : handleLogin}>
+                {user ? 'Logout' : 'Log in/Sign up'}
+            </button>
             </div>
         </header>
     );
