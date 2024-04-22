@@ -1,7 +1,4 @@
-.header--text {
-    /* Existing styles for header text */
-  }
-  
+
   h4 {
     color: white; /* Makes the username text white */
     font-weight: bold; /* Makes the text bold */
@@ -33,16 +30,19 @@
   
   /* Styles for the logout button */
   .logout-button {
-    background-color: #444; /* Sets a darker background for the button */
-    color: white; /* Sets the text color to white */
-    border: none; /* Removes the border */
-    padding: 10px 20px; /* Adds padding inside the button */
-    cursor: pointer; /* Changes the cursor to a pointer when you hover over the button */
-    transition: opacity 0.5s ease; /* Fades effect for the button */
+    background-color: #ddd;
+    border: none;
+    color: black;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition: 0.3s;
   }
   
   .logout-button:hover {
-    opacity: 0.7; /* Makes the button transparent when hovering */
+    background-color: #3e8e41;
+    color: white;
   }
   
   /* Additional container styles for alignment */
