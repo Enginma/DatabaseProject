@@ -27,10 +27,19 @@ const SignUpPage = () => {
             alert('Please log in to continue');
             navigate('/');
         } else {
-            alert('Failed to sign up.');
+            const errorText = await response.text();
+            switch (response.status) {
+              case 400:
+                alert('Failed to sign up: Invalid request. Please try again.');
+              case 409:
+                alert('An account with the given username or email already exists.');
+              default:
+                alert(`Failed to sign up: ${errorText}`);
+            }
         }
       } catch (error) {
         console.error('There was an error signing up:', error);
+        alert('There was an issue signing up. Please check your connection and try again.');
       }
     };
   
