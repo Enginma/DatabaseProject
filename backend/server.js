@@ -91,6 +91,30 @@ app.get("/data/search", async (req, res) => {
   }
 });
 
+app.post('/api/signup', async (req, res) => {
+  const { username, email, password } = req.body;
+
+  try {
+    const result = await pool.query(
+      'INSERT INTO accounts (username, email, password, status) VALUES ($1, $2, $3, $4) RETURNING id',
+      [username, email, password, 0]
+    );
+
+    if (result.rows.length > 0) {
+      const newAccountId = result.rows[0].id;
+      res.status(201).json({ id: newAccountId, message: 'Account created successfully' });
+    } else {
+      res.status(400).send('Account creation failed');
+    }
+  } catch (err) {
+    if (err.code === '23505') {
+      res.status(409).send('An account with the given username or email already exists');
+    } else {
+      console.error('Error during account creation:', err);
+      res.status(500).send('Internal server error');
+    }
+  }
+});
 
 
 app.listen(port, () => {

@@ -4,6 +4,7 @@ import GamesPage from '/Users/lnour/Desktop/DatabaseProject/src/HomePage.jsx';
 import LoginPage from '/Users/lnour/Desktop/DatabaseProject/src/Components/Auth/LoginPage.jsx';
 import '/Users/lnour/Desktop/DatabaseProject/App.css'; 
 import { UserProvider } from '/Users/lnour/Desktop/DatabaseProject/src/UserContext.jsx';
+import SignUpPage from './Components/Auth/SignupPage';
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="/post_login" element={<GamesPage />} />
+        <Route path="/sign-up" element={<SignUpPage />} />
       </Routes>
       </UserProvider>
     </Router>

@@ -13,8 +13,6 @@ const LoginPage = () => {
 
   const handleLogin = async (event) => {
     event.preventDefault();
-    
-    
     try {
         const endpoint = 'http://localhost:3001/api/login';
         const response = await fetch(endpoint, {
@@ -84,27 +82,23 @@ const LoginPage = () => {
                   <div className="form-group">
                     <button type="submit" className="form-control btn btn-primary submit px-3">Sign In</button>
                   </div>
-                  <div className="form-group d-md-flex">
+                  {/* <div className="form-group d-md-flex">
                     <div className="w-50">
-                      <label className="checkbox-wrap checkbox-primary">Remember Me
+                      <label className="checkbox-wrap checkbox-primary">Remember Me?
                         <input type="checkbox" defaultChecked />
                         <span className="checkmark"></span>
                       </label>
                     </div>
                     <div className="w-50 text-md-right">
-                      <a href="#" style={{ color: '#fff' }}>Forgot Password</a>
+                      <a href="#" style={{ color: '#fff' }}>Forgot Password?</a>
                     </div>
-                  </div>
+                  </div> */}
                 </form>
-                <p className="w-100 text-center">&mdash; Or Sign In With &mdash;</p>
+                <p className="w-100 text-center">&mdash; If you don't have an account &mdash;</p>
                 <div className="social d-flex text-center">
-                  <a href="#" className="px-2 py-2 mr-md-1 rounded">
+                  <a href="/sign-up" className="px-2 py-2 mr-md-1 rounded">
                     <span className="ion-logo-facebook mr-2"></span>
-                    Facebook
-                  </a>
-                  <a href="#" className="px-2 py-2 ml-md-1 rounded">
-                    <span className="ion-logo-twitter mr-2"></span>
-                    Twitter
+                    Sign up
                   </a>
                 </div>
               </div>
