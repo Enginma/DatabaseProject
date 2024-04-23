@@ -38,15 +38,15 @@ export default function Headerbar() {
     };
 
     return (
-        <header>
+        <header className='headerContainer'>
             <h2 className="header--text">
                 Game Data Analyst
             </h2>
-            <h4 className="username-display">{user ? user.username : 'Not signed in'}</h4>
-            <div className="header--title">
-            <button className="logout-button" onClick={user ? handleLogout : handleLogin}>
-                {user ? 'Logout' : 'Log in/Sign up'}
-            </button>
+            <div className='usernameContainer'>
+                <h4 className="username-display">{user ? user.username : 'Not signed in'}</h4>
+                <button className="logout-button" onClick={user ? handleLogout : handleLogin}>
+                    {user ? 'Logout' : 'Log in/Sign up'}
+                </button>
             </div>
         </header>
     );

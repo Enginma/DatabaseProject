@@ -68,11 +68,12 @@
 
 .popup-inner li {
   padding: 10px;
-  border-bottom: 1px solid #ccc; 
+  border-bottom: 1px solid #ccc;
+  color: black; 
 }
 
 .popup-inner li:last-child {
-  border-bottom: none; 
+  border-bottom: none;
 }
 
 @keyframes fadeIn {

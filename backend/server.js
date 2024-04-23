@@ -39,7 +39,7 @@ app.get("/data/genre/:genre", async (req, res) => {
 
 
     try {
-      const result = await pool.query(`SELECT * FROM games WHERE genre = '${genre}'`);
+      const result = await pool.query(`SELECT * FROM games WHERE genre = '${genre}' ORDER BY title ASC LIMIT 5`);
       res.json(result.rows);
     } catch (err) {
       console.error(err);
@@ -47,12 +47,34 @@ app.get("/data/genre/:genre", async (req, res) => {
     }
 });
 
+app.get("/data/storeitems/:id", async (req, res) => {
+  const id = req.params.id;
+
+  if (!/^\d+$/.test(id)) {
+    res.status(500).send("ID must be a number");
+    return
+  }
+
+  try {
+    const result = await pool.query(`SELECT * FROM storecontents WHERE game_id = '${id}'`);
+    res.json(result.rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Server error");
+  }
+});
+
+
+
+
+
+
 app.post('/api/login', async (req, res) => {
   const { username, password } = req.body;
   try {
       const result = await pool.query('SELECT verify($1, $2) AS verified', [username, password]);
       if (result.rows[0].verified === 1) {
-          res.json({ isAuthenticated: true, user: username }); // Simplified, usually you'd also issue a token or session
+          res.json({ isAuthenticated: true, user: username }); 
       } else {
           res.status(401).json({ isAuthenticated: false });
       }

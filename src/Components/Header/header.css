@@ -1,54 +1,58 @@
 
   h4 {
-    color: white; /* Makes the username text white */
-    font-weight: bold; /* Makes the text bold */
-    font-size: 1.2rem; /* Increases the size of the text */
-    /* Add any additional styles you want for the username */
+    color: white; 
+    font-weight: bold; 
+    font-size: 1.2rem; 
   }
   
   .logout-button {
-    background-color: #444; /* Sets a darker background for the button */
-    color: white; /* Sets the text color to white */
-    border: none; /* Removes the border */
-    padding: 10px 20px; /* Adds padding inside the button */
-    cursor: pointer; /* Changes the cursor to a pointer when you hover over the button */
-    transition: opacity 0.5s ease; /* Fades effect for the button */
+    background-color: #444; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    cursor: pointer; 
+    transition: opacity 0.5s ease; 
   }
   
   .logout-button:hover {
-    opacity: 0.5; /* Makes the button transparent when hovering */
+    opacity: 0.5; 
   }
   
-  /* Styles for the username */
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .username-display {
-    color: white; /* Makes the username text white */
-    font-weight: bold; /* Makes the text bold */
-    font-size: 1.2rem; /* Increases the size of the text */
-    margin-right: 20px; /* Adds space to the right of the username */
-    /* More styles if needed */
+    color: white; 
+    font-weight: bold; 
+    font-size: 25px; 
+    margin: 0; 
   }
   
-  /* Styles for the logout button */
+.usernameContainer {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+
+
   .logout-button {
-    background-color: #ddd;
-    border: none;
-    color: black;
-    padding: 16px 32px;
+    all: unset;
+    background-color: rgb(58, 62, 72);
+    padding: 5px 10px;
+    border-radius: 3px;
+    color:#fff;
+    border: solid 1px #ffffff22;
+    transition: background-color 0.1s;
+    width: 150px;
     text-align: center;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition: 0.3s;
   }
   
   .logout-button:hover {
-    background-color: #3e8e41;
-    color: white;
+    background-color: rgb(74, 79, 92);
   }
-  
-  /* Additional container styles for alignment */
-  .header--title {
-    display: flex; /* Aligns items in a row */
-    align-items: center; /* Vertically centers the items */
-    /* Any additional alignment or spacing styles */
-  }
+
   

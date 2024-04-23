@@ -20,13 +20,14 @@ header {
 .header--title {
   color: aliceblue;
   font-weight: 600;
+  margin: 0;
 }
 
 .header--text {
-  margin-right: auto;
   color: aqua;
   font-weight: 780;
   font-size: 22px;
+  margin: 0;
 }
 
 .games-page {
@@ -125,4 +126,37 @@ h3 {
   text-align: center;
   width: 100%;
   color: aqua;
+  padding: 14px;
+  font-size: 18px;
+}
+
+.BotPage {
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+  gap: 10px;
+}
+
+.BotGameButtons {
+  all: unset;
+  background-color: rgb(58, 62, 72);
+  padding: 5px 10px;
+  border-radius: 3px;
+  color:#fff;
+  border: solid 1px #ffffff22;
+  transition: background-color 0.1s;
+  width: 150px;
+  text-align: center;
+}
+
+.BotGameButtons:hover {
+  background-color: rgb(74, 79, 92);
+}
+.BotGameButtons:focus { 
+  outline: none; 
+}
+.BotGameButtons:active {
+  background-color: rgb(58, 62, 72);
 }
