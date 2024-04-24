@@ -13,16 +13,16 @@ export default function Headerbar() {
         try {
             const endpoint = 'http://localhost:3001/api/logout';
             const response = await fetch(endpoint, {
-                method: 'POST', // Sending a POST request
+                method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 }
             });
             console.log('Logout response:', response);
             if (response.ok) {
-                setUser(null); // Clear user context
+                setUser(null);
                 alert('Returning to log in page now')
-                window.location.href = '/'; // Redirect to login page
+                window.location.href = '/';
                 
             } else {
                 throw new Error('Logout failed with status: ' + response.status);

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './login.css'; // Make sure the path to your CSS file is correct
+import './login.css';
 import backgroundImage from './bg.jpg';
 import HomePage from '../../HomePage';
 import { useUser } from  '../../UserContext';
@@ -32,7 +32,7 @@ const SignUpPage = () => {
               case 400:
                 alert('Failed to sign up: Invalid request. Please try again.');
               case 409:
-                alert('An account with the given username or email already exists.');
+                //alert('An account with the given username or email already exists.');
               default:
                 alert(`Failed to sign up: ${errorText}`);
             }

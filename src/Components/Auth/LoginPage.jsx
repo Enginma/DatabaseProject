@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './login.css'; // Make sure the path to your CSS file is correct
+import './login.css';
 import backgroundImage from './bg.jpg';
 import HomePage from '../../HomePage';
 import { useUser } from  '../../UserContext';
