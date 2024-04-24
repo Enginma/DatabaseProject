@@ -33,6 +33,27 @@ export default function Headerbar() {
         }
     };
 
+    const get_email = async () => {
+
+        const username = user.username;
+        console.log('fuck me bitch >:( ', username)
+        try {
+            const endpoint = 'http://localhost:3001/data/' + username;
+            const response = await fetch(endpoint);
+            console.log('Get email response:', response);
+            if (response.ok) {
+                const data = await response.json();
+                alert('Email: ' + data[0].email);
+            } else {
+                throw new Error('Get email failed with status: ' + response.status);
+            }
+        } catch (error) {
+            console.error('Get email error:', error);
+            alert('Get email failed, please try again.');
+        }
+    };
+
+
     const handleLogin = () => {
         navigate('/');
     };
@@ -44,6 +65,9 @@ export default function Headerbar() {
             </h2>
             <div className='usernameContainer'>
                 <h4 className="username-display">{user ? 'Welcome back, ' + user.username : 'Not signed in'}</h4>
+                <button className="logout-button" onClick={user ? get_email : handleLogin}>
+                    {user ? 'Developer View' : 'Log in/Sign up'}
+                </button>
                 <button className="logout-button" onClick={user ? handleLogout : handleLogin}>
                     {user ? 'Logout' : 'Log in/Sign up'}
                 </button>
@@ -51,3 +75,4 @@ export default function Headerbar() {
         </header>
     );
 }
+
