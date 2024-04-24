@@ -66,7 +66,7 @@ app.get("/data/storeitems/:id", async (req, res) => {
 
 
 
-app.get("/data/:username", async (req, res) => {
+app.get("/data/email/:username", async (req, res) => {
   const username = req.params.username;
 
   try {
@@ -123,6 +123,9 @@ app.get("/data/search", async (req, res) => {
   }
 });
 
+
+
+
 app.post('/api/signup', async (req, res) => {
   const { username, email, password } = req.body;
 
@@ -152,7 +155,6 @@ app.get("/data/developers/games/:email", async (req, res) => {
   const emailaddress = req.params.email;
 
   try {
-
     const query = "SELECT * FROM developer_game_view WHERE email ILIKE $1";
     const result = await pool.query(query, [`%${emailaddress}%`]);
 

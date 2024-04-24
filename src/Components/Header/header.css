@@ -1,10 +1,5 @@
 
-  h4 {
-    color: white; 
-    font-weight: bold; 
-    font-size: 1.2rem; 
-  }
-  
+
   .logout-button {
     background-color: #444; 
     color: white; 
@@ -36,8 +31,6 @@
   gap: 10px;
   align-items: center;
 }
-
-
 
   .logout-button {
     all: unset;
