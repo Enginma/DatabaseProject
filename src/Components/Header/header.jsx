@@ -68,9 +68,14 @@ export default function Headerbar() {
                 <button className="logout-button" onClick={user ? get_email : handleLogin}>
                     {user ? 'Developer View' : 'Log in/Sign up'}
                 </button>
-                <button className="logout-button" onClick={user ? handleLogout : handleLogin}>
-                    {user ? 'Logout' : 'Log in/Sign up'}
-                </button>
+                {
+    user ? (
+        <button className="logout-button" onClick={get_email}>
+            Developer View
+        </button>
+    ) : null
+}
+
             </div>
         </header>
     );
