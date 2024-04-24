@@ -43,7 +43,7 @@ export default function Headerbar() {
                 Game Data Analyst
             </h2>
             <div className='usernameContainer'>
-                <h4 className="username-display">{user ? user.username : 'Not signed in'}</h4>
+                <h4 className="username-display">{user ? 'Welcome back, ' + user.username : 'Not signed in'}</h4>
                 <button className="logout-button" onClick={user ? handleLogout : handleLogin}>
                     {user ? 'Logout' : 'Log in/Sign up'}
                 </button>

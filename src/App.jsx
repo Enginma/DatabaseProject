@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import GamesPage from './HomePage';
-import LoginPage from '/Users/iancao/Documents/DatabaseV2/ianize/src/Components/Auth/LoginPage.jsx';
-import '/Users/iancao/Documents/DatabaseV2/ianize/App.css'; 
-import { UserProvider } from '/Users/iancao/Documents/DatabaseV2/ianize/src/UserContext.jsx';
+import LoginPage from './Components/Auth/LoginPage';
+import '../App.css'; 
+import { UserProvider } from './UserContext';
 import SignUpPage from './Components/Auth/SignupPage';
 
 const App = () => {

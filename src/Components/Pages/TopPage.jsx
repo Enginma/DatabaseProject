@@ -51,12 +51,14 @@ const GamesPage = (props) => {
   };
 
   return (
+    
     <main style={{
       backgroundImage: `url(${backgroundImages.image1}), url(${backgroundImages.image2})`,
       backgroundPosition: 'top right 130px, top left 80px', 
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'contain',
     }}>       
+    
       <div className="games-page">
         <div className="flex-container">
           <div className="right-section">

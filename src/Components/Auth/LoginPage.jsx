@@ -27,7 +27,7 @@ const LoginPage = () => {
           if (isAuthenticated) {
             setUser({ username });
             console.log(username);
-            alert('Login successful')
+            //alert('Login successful')
             //window.location.href = 'http://localhost:5173/post_login'
             navigate('/post_login');
             ;
