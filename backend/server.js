@@ -113,7 +113,7 @@ app.get("/data/search", async (req, res) => {
 
   try {
     const result = await pool.query(
-      "SELECT * FROM games WHERE title ILIKE $1 OR genre ILIKE $1",
+      "SELECT * FROM games WHERE title ILIKE $1",
       [`%${searchQuery}%`] 
     );
     res.json(result.rows);
