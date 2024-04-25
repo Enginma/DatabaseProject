@@ -75,7 +75,10 @@ export default function Headerbar() {
 
     return (
         <header className='headerContainer' >
-            <h2 className="header--text">Game Data Analyst</h2>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="header--link">
+
+            <h2 className="header--text">Game Data Explorer</h2>
+            </a>
             <div className='usernameContainer'>
                 <h4 className="username-display">{user ? 'Welcome back, ' + user.username : 'Not signed in'}</h4>
                 <button className="logout-button" onClick={user ? getEmail : handleLogout}>

@@ -9,7 +9,7 @@ const FloatingCreditBox = () => {
     backgroundColor: '#21222A',
     color: 'white',
     textAlign: 'center',
-    padding: '10px',
+    padding: '7px 10px 0 10px', 
     zIndex: '1000',
   };
 

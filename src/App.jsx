@@ -22,21 +22,3 @@ const App = () => {
 };
 
 export default App;
-
-// const GamesPage = () => {
-
-//   const [loadGames, setLoadedGames] = useState([
-
-//   ])
-
-
-//   return (
-//     <>
-//       <HeaderBar/>
-//       <TopPage updateGames = {(games) => setLoadedGames(games)}/>
-//       <BotPage games = {loadGames}/>
-//     </>
-//   );
-// };
-
-// export default GamesPage;

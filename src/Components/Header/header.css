@@ -48,4 +48,16 @@
     background-color: rgb(74, 79, 92);
   }
 
+  .header--link {
+    text-decoration: none;
+    color: inherit;
+  }
   
+  .header--text::after {
+    content: "";
+  }
+  
+  .header--link:hover .header--text::after {
+    content: " [DO NOT CLICK]";
+    color: rgb(255, 255, 255);
+  }
